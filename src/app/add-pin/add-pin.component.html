@@ -20,7 +20,7 @@
                 </div>
 
                 <input type="file" ng2FileSelect [uploader]="uploader" multiple class="select-image" />
-                <img src="" id="imageElement" class="display-image">
+                <img [src]="imgUrl" id="imageElement" class="display-image" *ngIf="imgUrl">
                 <input type="hidden" formControlName="selectImage" />
 
             </div>

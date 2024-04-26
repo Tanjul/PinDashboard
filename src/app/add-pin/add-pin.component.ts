@@ -17,6 +17,7 @@ export class AddPinComponent implements OnInit {
   public hasBaseDropZoneOver: boolean = false;
   collaborators: any;
   storedPin: any;
+  imgUrl:any;
   
   constructor(private _overlaySidePanelService: OverlaySidePanelService) {
 
@@ -77,10 +78,8 @@ export class AddPinComponent implements OnInit {
 
   getImage() {
     const base64String = localStorage.getItem('image');
-
-    const imgElement = document.getElementById('imageElement') as HTMLImageElement;
     if (base64String) {
-      imgElement.src = base64String;
+       this.imgUrl = base64String;
     } else {
       console.error('Image not found in localStorage');
     }
